@@ -46,9 +46,8 @@
 ## 特征
 ### 模型
 * kenlm：kenlm统计语言模型工具
-* rnn_lm：TensorFlow、PaddlePaddle均有实现栈式双向LSTM的语言模型
 * rnn_attention模型：参考Stanford University的nlc模型，该模型是参加2014英文文本纠错比赛并取得第一名的方法
-* rnn_crf模型：参考阿里巴巴2016参赛中文语法纠错比赛CGED2018并取得第一名的方法
+* rnn_crf模型：参考阿里巴巴2016参赛中文语法纠错比赛CGED2018并取得第一名的方法(整理中)
 * seq2seq_attention模型：在seq2seq模型加上attention机制，对于长文本效果更好，模型更容易收敛，但容易过拟合
 * transformer模型：全attention的结构代替了lstm用于解决sequence to sequence问题，语义特征提取效果更好
 * bert模型：中文fine-tuned模型，使用MASK特征纠正错字
@@ -120,7 +119,7 @@ pip3 install git+https://www.github.com/keras-team/keras-contrib.git
 
 本项目的初衷之一是比对、共享各种文本纠错方法，抛砖引玉的作用，如果对大家在文本纠错任务上有一点小小的启发就是我莫大的荣幸了。
 
-主要使用了多种深度模型应用于文本纠错任务，分别是前面`模型`小节介绍的`rnn_attention`、`rnn_crf`、`conv_seq2seq`、`seq2seq_attention`、
+主要使用了多种深度模型应用于文本纠错任务，分别是前面`模型`小节介绍的`rnn_attention`、`conv_seq2seq`、`seq2seq_attention`、
 `transformer`、`bert`，各模型方法内置于`pycorrector`文件夹下，有`README.md`详细指导，各模型可独立运行，相互之间无依赖。
 
 
@@ -155,7 +154,7 @@ python preprocess.py
 python train.py
 ```
 训练过程截图：
-![train image](https://github.com/shibing624/pycorrector/blob/master/pycorrector/data/git_image/seq2seq_train.png)
+![train image](./docs/git_image/seq2seq_train.png)
 
 
 #### 预测
@@ -208,16 +207,22 @@ input: 由我起开始做 output: 由我开始做
 
 ## 参考
 
-1. [基于文法模型的中文纠错系统](https://blog.csdn.net/mingzai624/article/details/82390382)
-2. [Norvig’s spelling corrector](http://norvig.com/spell-correct.html)
-3. [《Chinese Spelling Error Detection and Correction Based on Language Model, Pronunciation, and Shape》[Yu, 2013]](http://www.aclweb.org/anthology/W/W14/W14-6835.pdf)
-4. [《Chinese Spelling Checker Based on Statistical Machine Translation》[Chiu, 2013]](http://www.aclweb.org/anthology/O/O13/O13-1005.pdf)
-5. [《Chinese Word Spelling Correction Based on Rule Induction》[yeh, 2014]](http://aclweb.org/anthology/W14-6822)
-6. [《Neural Language Correction with Character-Based Attention》[Ziang Xie, 2016]](https://arxiv.org/pdf/1603.09727.pdf)
-7. [《Chinese Spelling Check System Based on Tri-gram Model》[Qiang Huang, 2014]](http://www.anthology.aclweb.org/W/W14/W14-6827.pdf)
-8. [《Neural Abstractive Text Summarization with Sequence-to-Sequence Models》[Tian Shi, 2018]](https://arxiv.org/abs/1812.02303)
-9. [《基于深度学习的中文文本自动校对研究与实现》[杨宗霖, 2019]](https://github.com/shibing624/pycorrector/blob/master/docs/基于深度学习的中文文本自动校对研究与实现.pdf)
-10. [《A Sequence to Sequence Learning for Chinese Grammatical Error Correction》[Hongkai Ren, 2018]](https://link.springer.com/chapter/10.1007/978-3-319-99501-4_36)
+* [基于文法模型的中文纠错系统](https://blog.csdn.net/mingzai624/article/details/82390382)
+* [Norvig’s spelling corrector](http://norvig.com/spell-correct.html)
+* [《Chinese Spelling Error Detection and Correction Based on Language Model, Pronunciation, and Shape》[Yu, 2013]](http://www.aclweb.org/anthology/W/W14/W14-6835.pdf)
+* [《Chinese Spelling Checker Based on Statistical Machine Translation》[Chiu, 2013]](http://www.aclweb.org/anthology/O/O13/O13-1005.pdf)
+* [《Chinese Word Spelling Correction Based on Rule Induction》[yeh, 2014]](http://aclweb.org/anthology/W14-6822)
+* [《Neural Language Correction with Character-Based Attention》[Ziang Xie, 2016]](https://arxiv.org/pdf/1603.09727.pdf)
+* [《Chinese Spelling Check System Based on Tri-gram Model》[Qiang Huang, 2014]](http://www.anthology.aclweb.org/W/W14/W14-6827.pdf)
+* [《Neural Abstractive Text Summarization with Sequence-to-Sequence Models》[Tian Shi, 2018]](https://arxiv.org/abs/1812.02303)
+* [《基于深度学习的中文文本自动校对研究与实现》[杨宗霖, 2019]](https://github.com/shibing624/pycorrector/blob/master/docs/基于深度学习的中文文本自动校对研究与实现.pdf)
+* [《A Sequence to Sequence Learning for Chinese Grammatical Error Correction》[Hongkai Ren, 2018]](https://link.springer.com/chapter/10.1007/978-3-319-99501-4_36)
+
+
+## 讨论群
+<img src="./docs/git_image/erweima.png" height="450" />
+
+微信交流群，感兴趣的同学可以加入沟通NLP文本纠错相关技术，issues上回复不及时也可以在群里面提问。
 
 ----
 
